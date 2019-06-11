@@ -15,22 +15,22 @@
   public function checkLoL()
   {
     if (($this->RAM >= 8)&&($this->HDD >= 11)&&($this->CPU >= 2)&&($this->GPU >= 2)) {
-      echo "Rozjedeš lolko pichusi";
+      
       return TRUE;
     }
     else {
-      echo "Upgrejdni si to kokos:DDDD";
+      
       return FALSE;
     }
   }
   public function checkCS()
   {
     if (($this->RAM >= 4)&&($this->HDD >= 9)&&($this->CPU >= 1)&&($this->GPU >= 1)) {
-      echo "Rozjedeš ceesko pichusi";
+      
       return TRUE;
     }
     else {
-      echo "Upgrejdni si to kokos:DDDD";
+      
       return FALSE;
     }
   }
@@ -102,4 +102,18 @@
       }
         return FALSE;
   }
+  public function summary()
+    {
+      if (isset($this->MB)&&(isset($this->CPU))&&(isset($this->GPU))&&(isset($this->RAM))&&(isset($this->HDD))) {
+        echo "Základní deska: " . $this->MB . "<br>";
+        echo "CPU: " . $this->CPU . "GHz <br>";
+        echo "GPU: " . $this->GPU . "Gb <br>";
+        echo "RAM: " . $this->RAM . "Gb <br>";
+        echo "HDD: " . $this->HDD . "Gb <br>";
+        return TRUE;
+      }
+      return FALSE;
+    }
 }
+
+    
